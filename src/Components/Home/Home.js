@@ -4,8 +4,10 @@ import Post from '../Post/Post';
 
 
 
+
 const Home = () => {
     const [post, setPosts] = useState([])
+   
   
   
     useEffect(() => {
@@ -14,12 +16,20 @@ const Home = () => {
             .then(data => setPosts(data))
 
     }, [])
-   
+    const headerStyle = {
+        border: '1px solid purple',              
+        margin: '20px',
+        padding: '20px',
+        borderRadius: '20px',
+        backgroundColor : 'yellow'
+        
+    }
     return (
-        <div>
-            <h1>{post.length}</h1>
+        <div style={headerStyle}>
+        <h1>Social Buddy</h1>
+            
             {
-                post.map(pd => <Post post={pd}></Post>)
+                post.map(pd => <Post  post={pd}></Post>)
             }
            
         </div>

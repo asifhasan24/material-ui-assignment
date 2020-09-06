@@ -8,8 +8,8 @@ import Comment from '../Comment/Comment';
 const PostDetails = () => {
     const { postId } = useParams()
     const [post, setPosts] = useState([])
-
-useEffect(() => {
+  
+     useEffect(() => {
         const url = `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
         fetch(url)
             .then(res => res.json())
@@ -17,18 +17,29 @@ useEffect(() => {
 
     }, []
     );
+   
 
 
+    const headerStyle = {
+        border: '1px solid purple',              
+        margin: '20px',
+        padding: '20px',
+        borderRadius: '20px',
+        backgroundColor : 'yellow'
+        
+    }
 
+  
 
-
-
+    
     return (
-        <div>
+        <div style={headerStyle} >
+        <h1>Details Information</h1>
 
             {
-                post.map(post => <Comment post={post}></Comment>)
+                post.map(post => <Comment key={postId} post={post}></Comment>)
             }
+           
 
 
 

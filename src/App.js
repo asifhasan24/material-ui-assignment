@@ -14,6 +14,7 @@ import PostDetails from './Components/PostDetails/PostDetails';
 
 function App() {
   return (
+   
     <Router>
       <Switch>
         <Route path="/home">
